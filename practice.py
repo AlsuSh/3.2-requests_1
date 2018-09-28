@@ -1,6 +1,5 @@
 import requests
 import os
-# from chardet.universaldetector import UniversalDetector
 
 def translate_it(text, lang_from, lang_to, file_to):
     """
@@ -29,7 +28,6 @@ def translate_it(text, lang_from, lang_to, file_to):
         'text': text,
     }
     response = requests.get(url, params=params).json()
-    # return ' '.join(response.get('text', []))
     with open(file_to, 'w') as f:
         f.write(' '.join(response.get('text', [])))
 
